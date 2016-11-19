@@ -1,24 +1,22 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import {INCREMENT} from './mutations'
+import {incrementAsync} from './actions'
 
 Vue.use(Vuex)
 
 const state = {
-  count: 0
+  count: 0,
+  artists: [],
+  isBusy: false
 }
 
 const mutations = {
-  INCREMENT(state) {
-    state.count++
-  }
+  INCREMENT
 }
 
 const actions = {
-  incrementAsync({commit}) {
-    setTimeout(() => {
-      commit('INCREMENT')
-    }, 200)
-  }
+  incrementAsync
 }
 
 const store = new Vuex.Store({
